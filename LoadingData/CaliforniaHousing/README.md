@@ -47,7 +47,7 @@ $ dotnet add package BetterConsoleTables
 $ dotnet add package plplot
 ```
 
-**Microsoft.ML** is the Microsoft machine learning package. We will use to build all our applications in this course. The **BetterConsoleTables** package is a handy library for writing nicely formatted tables to the console. ANd **PLplot** is an advanced scientific plotting library.
+**Microsoft.ML** is the Microsoft machine learning package. We will use to build all our applications in this course. The **BetterConsoleTables** package is a handy library for writing nicely formatted tables to the console and **PLplot** is an advanced scientific plotting library.
 
 Now you are ready to add classes. You’ll need one class to hold all the information for a single housing block.
 
@@ -157,13 +157,13 @@ The housing data is  stored in memory as a data view, but we want to work with t
 
 The **pl.sdev** method then sets the plot device and the **sfnam** method sets the output filename. We call **spal0** to set an alternate color palette, **init** to initialize the plot, **env** to set up the axes, and **lab** to set up the labels.
 
-The **sym** method draws a symbol for every houseing block in the dataset. The code uses two LINQ queries to set up arrays of median income and median house values.
+The **sym** method draws a symbol for every housing block in the dataset. The code uses two LINQ queries to set up arrays of median income and median house values.
 
 The final **eop** method closes the plot and saves it to disk.
 
 This is a good moment to save your work ;) 
 
-We're ready to run the app. But on Windows we have to do one more housekeeping task. There's an unfortunate bug in the Plplot library that makes it look in the wrong folder for font and color palette files.  We need to copy these files to a different location to get the library to work. 
+We're ready to run the app, but on Windows we have to do one more housekeeping task. There's an unfortunate bug in the Plplot library that makes it look in the wrong folder for font and color palette files.  We need to copy these files to a different location to get the library to work. 
 
 Go to the console (I prefer to use Powershell) and make sure you're in the project folder. Then type the following: 
 
@@ -177,7 +177,7 @@ Now type the following (this example is in Powershell, use the equivalent copy c
 
 ```bash
 $ cd .\bin\Debug\netcoreapp3.0\
-$ copy .\runtimes\win-x64\native\plplot . -recurse
+$ copy .\runtimes\win-x64\native\plplot . -recurse (PowerShell) or robocopy .\runtimes\win-x64\native\plplot .\plplot /e (cmd)
 $ cd ..\..\..
 ```
 
